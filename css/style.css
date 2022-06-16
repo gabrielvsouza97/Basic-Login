@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend Deca', 'Sans-serif';
+}
+
+:root{
+    --white: #FFFFFF;
+    --dark-blue: #1b6dca;
+    --medium-blue: #2b83f7;
+    --light-blue: #81c2ff;
+    --purple: #8e2de2;
+}
+
+section.login{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    max-width: 25rem;
+    margin: 0 auto;
+    background-color: var(--white);
+    /* background-color: var(--dark-blue); */
+    border:none;
+    border-radius: 24px;
+    height: 80vh;
+    padding: 20px;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+section.login h2{
+    color: var(--dark-blue);
+    font-size: 1.5em;
+    /* margin-bottom: 32px; */
+    position:relative;
+    top:-10%;
+}
+
+section.login .form-login{
+    width: 100%;
+    display: block;
+    margin-bottom: 30px;
+    position:relative;
+}
+
+section.login .form-login input{
+    width: 100%;
+    border-radius: 5px;
+    padding: 30px 10px 5px;
+    border: none;
+    border-bottom: 1px solid var(--medium-blue);
+    background-color: transparent;
+    outline: none;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+section.login .form-login span{
+    position: absolute;
+    font-weight: 700;
+    font-size: 0.8em;
+    color: var(--light-blue);
+    margin: 35px 10px;
+    cursor:text;
+    text-transform: uppercase;
+    transition: ease-out 0.2s;
+    background-color: transparent;
+}
+
+section.login .form-login span.ativo{
+    margin: 5px 10px;
+    color: var(--medium-blue);
+}
+section.login .form-login input.ativo{
+    border: 2px solid var(--medium-blue);
+}
+
+section.login .form-lembrar{
+    display:block;
+    margin-bottom: 32px;
+    color: var(--medium-blue);
+}
+
+section.login input[type="submit"]{
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px 10px;
+    border: none;
+    border-bottom: 1px solid var(--light-blue);
+    background-color: transparent;
+    outline: none;
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--dark-blue);
+    cursor: pointer;
+    transition: ease-out 0.2s;
+}
+section.login input[type="submit"]:hover{
+    background-color: var(--medium-blue);
+    color: var(--white);
+}
+
+section.plano-de-fundo{
+    background-image: url('../assets/background.svg');    
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+}
+section.plano-de-fundo #particles-js{
+    width:98%;
+    height: 98%;
+    position:relative;
+}
+section.noticia{
+    background-color: var(--light-blue);
+    display:flex;
+    justify-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto 20px;
+    width: 300px;
+    color: white;
+    padding: 10px;
+
+}
+
+section.noticia h1{
+    font-size: 1.5em;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+section.noticia p{
+    font-size: 1em;
+    margin-bottom: 32px;
+}
+section.noticia h2{
+    font-size: 0.3em;
+    text-decoration: underline;
+    color: var(--dark-blue);
+    text-align: right;
+}
