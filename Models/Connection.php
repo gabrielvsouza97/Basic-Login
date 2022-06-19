@@ -15,5 +15,5 @@ class Connection {
             }
         }
         return self::$isConnected;
-    }
+    }    
 }

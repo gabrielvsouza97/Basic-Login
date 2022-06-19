@@ -10,7 +10,22 @@ Class Noticias{
 
     public function getAllNoticias(){
         $dados = array();
-        $sql = "SELECT * FROM `noticias`";
+        $sql = "SELECT n.*, LOWER(cn.CATEGORIA) as CATEGORIAS FROM `noticias` n INNER JOIN categorias_noticia cn ON n.CATEGORIA = cn.ID";
+        $result = $this->con->query($sql);
+        $dados = $result->fetchAll(PDO::FETCH_ASSOC);
+        return $dados;
+    }
+    public function getCategory($category){
+        $dados = array();
+        $sql = "SELECT n.*, LOWER(cn.CATEGORIA) as CATEGORIAS FROM `noticias` n INNER JOIN categorias_noticia cn ON n.CATEGORIA = cn.ID WHERE n.CATEGORIA = '$category'";
+        $result = $this->con->query($sql);
+        
+        $dados = $result->fetchAll(PDO::FETCH_ASSOC);
+        return $dados;
+    }
+    public function getNotice($category,$notice){
+        $id = $notice[0];
+        $sql = "SELECT n.*, LOWER(cn.CATEGORIA) as CATEGORIAS FROM `noticias` n INNER JOIN categorias_noticia cn ON n.CATEGORIA = cn.ID WHERE n.CATEGORIA = '$category' AND n.ID = '$id'";
         $result = $this->con->query($sql);
         $dados = $result->fetchAll(PDO::FETCH_ASSOC);
         return $dados;

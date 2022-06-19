@@ -13,7 +13,16 @@ class noticiasController extends Controller{
         
 
     }
-    public function noticiasCarro(){
-        $this->loadTemplate('noticiasCarro');
+    public function noticiasCarro($notice = null){
+        //1) Chamando o model
+        $noticias = new Noticias();
+        if(count($notice)>0) {
+            $pesquisa = $noticias->getNotice(1, $notice);
+        } else {
+            $pesquisa = $noticias->getCategory(1);
+        }
+
+        //2) Chamando a view
+        $this->loadTemplate('noticiasCarro',array(), $pesquisa);
     }
 }

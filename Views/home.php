@@ -10,6 +10,30 @@
     <title>Fazer Login</title>
 </head>
 <body>
+    <?php
+    if(isset($_POST['acao'])){
+       
+        $email = $_POST['email'];
+        $password = md5($_POST['senha']);;
+        $con = new ConsultUser();
+        $usuario =  $con->userExists($email);
+        $resultUser = ($usuario != "") ? 1 : 0;
+        $resultPass = ($con->passMatch($password) != "") ? 2 : 0;
+        $result = $resultUser + $resultPass;
+        if($result == 1){
+            echo "
+            Bem vindo novamente ".$usuario->NOME."
+            Sua senha está incorreta, tente novamente.";
+        } else if ($result == 3){
+            echo "Login correto";
+        } else{            
+            echo "Usuario não encontrato no sistema";
+        }
+    }
+
+
+?>
+        <form method="post">
     <section class="login">
         <h2 id="texto-Login">Faça o Login</h2>
         <label class="form-login">
@@ -26,8 +50,9 @@
             <span>Lembrar Login?</span>
         </label>
 
-        <input type="submit" value="Entrar">
+        <input type="submit" value="Entrar" name='acao'>
     </section>
+</form>
     <section class="plano-de-fundo">
         <div id="particles-js"></div>
     </section>
