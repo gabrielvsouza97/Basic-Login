@@ -15,7 +15,6 @@
 
 <?php
 session_start();
-print_r($_SESSION['email']);
 //Verificando se não tem uma session
 if(!isset($_SESSION['email'])){
     $this->loadView('login');

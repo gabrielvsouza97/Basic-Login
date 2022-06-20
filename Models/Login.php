@@ -27,7 +27,7 @@ class Login{
         }
     }
 
-    public function createSession($dados,$dadosPost){
+    private function createSession($dados,$dadosPost){
        
         $_SESSION['email'] = $dados->USUARIO;
         $_SESSION['name'] = $dados->NOME;

@@ -1,3 +1,3 @@
-<?
+<?php
 
-echo '<h1>Painel</h1>';
+echo 'Painel';
